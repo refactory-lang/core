@@ -1,0 +1,9 @@
+name: "@refactory/core"
+version: "0.1.0"
+description: "Shared utilities for Refactory Codemod packages"
+engine: jssg
+tags:
+  - refactory
+  - shared
+repository: https://github.com/refactory-lang/core
+license: Apache-2.0
