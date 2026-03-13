@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://github.com/refactory-lang"><img src="https://raw.githubusercontent.com/refactory-lang/.github/main/assets/refactory-logo.svg" alt="Refactory" width="300"></a>
+</p>
+
 # @refactory/core
 
 Shared utilities for Refactory Codemod packages. Contains type mapping functions, common transform helpers, and cross-language utilities used by both `@refactory/python-to-rust` and `@refactory/typescript-to-rust`.
