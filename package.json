@@ -7,10 +7,11 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsgo --noEmit",
-    "lint": "oxlint -c packages/config/oxlintrc.json .",
-    "format": "oxfmt --config packages/config/oxfmt.json ."
+    "lint": "oxlint -c node_modules/@refactory/config-typescript/oxlintrc.json .",
+    "format": "oxfmt --config node_modules/@refactory/config-typescript/oxfmt.json ."
   },
   "devDependencies": {
+    "@refactory/config-typescript": "github:refactory-lang/config-typescript",
     "@typescript/native-preview": "7.0.0-dev.20260317.1",
     "oxfmt": "^0.41.0",
     "oxlint": "^1.56.0",
