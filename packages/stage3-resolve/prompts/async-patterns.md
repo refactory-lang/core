@@ -29,4 +29,4 @@ The following Rust code has async patterns that need Tokio-specific handling:
 
 ## Escalation
 
-If the async pattern requires a fundamentally different architecture (e.g., actor model, channel-based communication), emit a `// TODO(t3:async): architecture change required` comment and leave the code unchanged.
+If the async pattern requires a fundamentally different architecture (e.g., actor model, channel-based communication), emit a `// TODO(s3:async): architecture change required` comment and leave the code unchanged.

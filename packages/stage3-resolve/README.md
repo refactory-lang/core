@@ -1,6 +1,6 @@
 # Stage 3: Rust→Rust Resolve
 
-Language-agnostic Stage 3 resolution for `todo!("t3:*")` stub markers emitted by Stage 1/2 transforms.
+Language-agnostic Stage 3 resolution for `todo!("s3:*")` stub markers emitted by Stage 1/2 transforms.
 
 Stage 3 operates exclusively on Rust code — it is **not** a Python→Rust or TypeScript→Rust transform. Both `python-to-rust` and `typescript-to-rust` pipelines use this shared S3 pass.
 
@@ -21,22 +21,22 @@ Reference this package from any transformation pipeline's `workflow.yaml`:
   type: shell
   depends_on: [tier2-modules]
   config:
-    command: grep -rc 'todo!("t3:' build/rust/src/ | awk -F: '{s+=$2}END{print s}'
+    command: grep -rc 'todo!("s3:' build/rust/src/ | awk -F: '{s+=$2}END{print s}'
 
-- id: tier3-resolve
+- id: stage3-resolve
   name: Stage 3 Rust→Rust idiomaticity pass
   type: ai
   depends_on: [count-stubs]
   skip_if: stub_count == 0
   config:
     model: claude-sonnet-4-20250514
-    prompts: node_modules/@refactory/core/packages/tier3-resolve/prompts/
+    prompts: node_modules/@refactory/core/packages/stage3-resolve/prompts/
     input: build/rust/src/
     scope: stub_markers_only
     context:
       compiler_errors: true
       original_source: true
-    output_schema: tier3-structured-output.json
+    output_schema: stage3-structured-output.json
 ```
 
 ## S3 Rule Types

@@ -28,4 +28,4 @@ The following Rust code has generic type parameters that need trait bounds to co
 
 ## Escalation
 
-If the generic bounds require a fundamental redesign (e.g., introducing a new trait to abstract over incompatible types), emit a `// TODO(t3:generic-bounds): redesign required` comment and leave the code unchanged.
+If the generic bounds require a fundamental redesign (e.g., introducing a new trait to abstract over incompatible types), emit a `// TODO(s3:generic-bounds): redesign required` comment and leave the code unchanged.

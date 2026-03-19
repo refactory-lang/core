@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This prompt is used by the Stage 3 AI workflow step (`tier3-ai-fallback` in `workflow.yaml`)
+This prompt is used by the Stage 3 AI workflow step (`stage3-ai-fallback` in `workflow.yaml`)
 to resolve Rust lifetime annotations for patterns that Stage 1 and Stage 2 deterministic
 transforms could not handle.
 
