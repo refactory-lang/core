@@ -1,6 +1,6 @@
-# Tier 3: Async Pattern Resolution
+# Stage 3: Async Pattern Resolution
 
-You are resolving async/await patterns for Rust code produced by an automated translation pipeline. The target runtime is Tokio.
+You are resolving async/await patterns for Rust code produced by an automated transformation pipeline. The target runtime is Tokio.
 
 ## Context
 

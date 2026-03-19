@@ -1,8 +1,8 @@
-# Tier 3: Rust→Rust Resolve
+# Stage 3: Rust→Rust Resolve
 
-Language-agnostic Tier 3 resolution for `todo!("t3:*")` stub markers emitted by Tier 1/2 transforms.
+Language-agnostic Stage 3 resolution for `todo!("t3:*")` stub markers emitted by Stage 1/2 transforms.
 
-Tier 3 operates exclusively on Rust code — it is **not** a Python→Rust or TypeScript→Rust transform. Both `python-to-rust` and `typescript-to-rust` pipelines use this shared T3 pass.
+Stage 3 operates exclusively on Rust code — it is **not** a Python→Rust or TypeScript→Rust transform. Both `python-to-rust` and `typescript-to-rust` pipelines use this shared S3 pass.
 
 ## Prompt Templates
 
@@ -13,18 +13,18 @@ Tier 3 operates exclusively on Rust code — it is **not** a Python→Rust or Ty
 
 ## Workflow Integration
 
-Reference this package from any translation pipeline's `workflow.yaml`:
+Reference this package from any transformation pipeline's `workflow.yaml`:
 
 ```yaml
 - id: count-stubs
-  name: Count Tier 3 stubs
+  name: Count Stage 3 stubs
   type: shell
   depends_on: [tier2-modules]
   config:
     command: grep -rc 'todo!("t3:' build/rust/src/ | awk -F: '{s+=$2}END{print s}'
 
 - id: tier3-resolve
-  name: Tier 3 Rust→Rust idiomaticity pass
+  name: Stage 3 Rust→Rust idiomaticity pass
   type: ai
   depends_on: [count-stubs]
   skip_if: stub_count == 0
@@ -39,7 +39,7 @@ Reference this package from any translation pipeline's `workflow.yaml`:
     output_schema: tier3-structured-output.json
 ```
 
-## T3 Rule Types
+## S3 Rule Types
 
 Per v0.3 spec, these are the 5 irreducible residual construct types:
 

@@ -1,9 +1,9 @@
-# Lifetime Resolution — Tier 3 AI Prompt Template
+# Lifetime Resolution — Stage 3 AI Prompt Template
 
 ## Purpose
 
-This prompt is used by the Tier 3 AI workflow step (`tier3-ai-fallback` in `workflow.yaml`)
-to resolve Rust lifetime annotations for patterns that Tier 1 and Tier 2 deterministic
+This prompt is used by the Stage 3 AI workflow step (`tier3-ai-fallback` in `workflow.yaml`)
+to resolve Rust lifetime annotations for patterns that Stage 1 and Stage 2 deterministic
 transforms could not handle.
 
 Lifetimes arise when the translated Rust code contains references (`&T`, `&mut T`) whose
@@ -20,9 +20,9 @@ scope cannot be inferred by `rustc` automatically. Common sources:
 
 ```
 You are a Rust lifetime annotation expert assisting an automated Python-to-Rust
-translation pipeline.
+transformation pipeline.
 
-The following Rust code was produced by deterministic AST transforms (Tier 1 and Tier 2).
+The following Rust code was produced by deterministic AST transforms (Stage 1 and Stage 2).
 It fails to compile because the borrow checker cannot infer lifetimes for one or more
 references.
 
@@ -70,7 +70,7 @@ def first_word(s: str) -> str:
 ```
 
 ```rust
-// Tier 1 output (missing lifetime)
+// Stage 1 output (missing lifetime)
 pub fn first_word(s: &str) -> &str {
     s.split_whitespace().next().unwrap_or("")
 }
@@ -94,7 +94,7 @@ class Parser:
 ```
 
 ```rust
-// Tier 1 output (if source is a borrow, not owned)
+// Stage 1 output (if source is a borrow, not owned)
 pub struct Parser<'a> {
     pub source: &'a str,
     pub pos: i64,

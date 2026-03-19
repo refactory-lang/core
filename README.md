@@ -19,7 +19,7 @@ Shared utilities for Refactory Codemod packages. Contains type mapping functions
 
 ## Shared Transform Rules
 
-Several Tier 1 rules are structurally identical across Python and TypeScript profiles (string method mappings, numeric type mappings, Result-pattern transforms). These are implemented once in `@refactory/core` and imported by both packages.
+Several Stage 1 rules are structurally identical across Python and TypeScript profiles (string method mappings, numeric type mappings, Result-pattern transforms). These are implemented once in `@refactory/core` and imported by both packages.
 
 ## License
 

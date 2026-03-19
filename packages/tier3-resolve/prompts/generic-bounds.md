@@ -1,6 +1,6 @@
-# Tier 3: Generic Bounds Resolution
+# Stage 3: Generic Bounds Resolution
 
-You are resolving generic type bounds for Rust code produced by an automated translation pipeline.
+You are resolving generic type bounds for Rust code produced by an automated transformation pipeline.
 
 ## Context
 

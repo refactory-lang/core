@@ -1,4 +1,4 @@
-# Tier 3: Trait Inference Prompt
+# Stage 3: Trait Inference Prompt
 
 You are translating Python Protocol classes to Rust trait definitions. The Python code
 uses structural typing (Protocol from typing) which maps to Rust traits.
